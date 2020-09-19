@@ -11,6 +11,7 @@ public class GreetingController {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
+	public sess = new Sessions();
 
 	@GetMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "User") String name) {
@@ -19,7 +20,7 @@ public class GreetingController {
 
 	@GetMapping("/session")
 	public String sessions() {
-		return Sessions.GetSession();
+		return sess.GetSession();
 	}
 
 }
