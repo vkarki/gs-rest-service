@@ -9,14 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController2 {
 
-	private static final String template = "Hello, %s!";
-	private final AtomicLong counter = new AtomicLong();
-    Sessions sess = new Sessions();
-
-
 	@GetMapping("/greeting2")
 	public String greeting2() {
-		return sess.GetSession();
+		return "{\r\n   \"program\":\"stay relevant stay on top\",\r\n   \"topic\":\"Azure DevOps\",\r\n   \"presenter\":\"Vishal Karki\",\r\n   \"Agenda\":{\r\n      \"Section1\":\"DevOps philosophy\",\r\n      \"Section2\":\"Tool walkaround\",\r\n      \"Section3\":\"Deploy a Restful app service\"\r\n   }\r\n}";;
 	}
 
 }
