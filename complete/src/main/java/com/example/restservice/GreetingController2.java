@@ -11,11 +11,12 @@ public class GreetingController2 {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
+    Sessions sess = new Sessions();
 
 
 	@GetMapping("/greeting2")
-	public Greeting greeting2(@RequestParam(value = "name", defaultValue = "User") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	public String greeting2() {
+		return sess.GetSession();
 	}
 
 }
