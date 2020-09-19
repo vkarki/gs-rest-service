@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@GetMapping("/Hello")
 public class GreetingController1 {
 
 	private static final String template = "Hello, %s!";
