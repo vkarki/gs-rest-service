@@ -11,16 +11,15 @@ public class GreetingController {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
-	public sess = new Sessions();
 
 	@GetMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "User") String name) {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 
-	@GetMapping("/session")
+	@GetMapping("/")
 	public String sessions() {
-		return sess.GetSession();
+		return "{\"message\":\"Hello Worldv1\"}";;
 	}
 
 }
