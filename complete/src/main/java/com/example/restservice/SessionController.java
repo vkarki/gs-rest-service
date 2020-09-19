@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SessionController {
 
 	@GetMapping("/session")
-	public String session() {
+	public Session session() {
 		return new Session("stay relevant stay on top", "Azure DevOps", "Test");
 	}
 
