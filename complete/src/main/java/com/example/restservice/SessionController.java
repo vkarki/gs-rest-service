@@ -10,7 +10,7 @@ public class SessionController {
 
 	@GetMapping("/session")
 	public String session() {
-		return new Session("stay relevant stay on top", "Azure DevOps", "Test")
+		return new Session("stay relevant stay on top", "Azure DevOps", "Test");
 	}
 
 }
