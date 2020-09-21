@@ -58,7 +58,7 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure Web App Deploy: saasdemo'
             inputs:
-              azureSubscription: 'FreeTrialSubConnection'
+              azureSubscription: 'serviceconnection'
               appType: 'webAppLinux'
               appName: 'saasdemo'
               package: '$(Pipeline.Workspace)/drop/**/target/*.jar'
