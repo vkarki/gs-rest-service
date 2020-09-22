@@ -8,7 +8,7 @@ variables:
   azureSubscription: 'b5ab8c16-cd12-41a6-b26b-b376c1b10ab1'
   
   # Web app name
-  webAppName: 'saasdemo'
+  webAppName: 'saasdev'
 
   # Environment name
   environmentName: 'Dev'
@@ -56,9 +56,9 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: saasdemo'
+            displayName: 'Azure Web App Deploy: $(webAppName)'
             inputs:
               azureSubscription: 'serviceconnection'
               appType: 'webAppLinux'
-              appName: 'saasdemo'
+              appName: '$(webAppName)'
               package: '$(Pipeline.Workspace)/drop/**/target/*.jar'
