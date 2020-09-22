@@ -6,6 +6,6 @@ RUN mvn -f /home/app/pom.xml clean package
 
 # Create an Image
 FROM openjdk:8-jdk-alpine
-EXPOSE 5000
+EXPOSE 80
 COPY --from=stage1 /home/app/target/rest-service.jar rest-service.jar
 ENTRYPOINT ["sh", "-c", "java -jar /rest-service.jar"]
