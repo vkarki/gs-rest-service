@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: vkarkigsrestservice 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vkarkigsrestservice 
+    spec:
+      containers:
+        - name: vkarkigsrestservice 
+          image: aksdemosaas.azurecr.io/vkarkigsrestservice
+          ports:
+          - containerPort: 5000
