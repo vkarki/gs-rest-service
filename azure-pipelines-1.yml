@@ -11,10 +11,10 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '1f278aee-dac9-4895-83c4-0eddeb87bc69'
-  imageRepository: 'vkarkigsrestservice'
+  dockerRegistryServiceConnection: 'f65cc979-d8d3-4604-af15-b85eef331543'
+  imageRepository: 'restservice'
   containerRegistry: 'aksdemosaas.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'aksdemosaas1933597e-auth'
 
