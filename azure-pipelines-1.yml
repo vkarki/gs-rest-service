@@ -15,7 +15,7 @@ variables:
   imageRepository: 'restservice'
   containerRegistry: 'aksdemosaas.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '109'
+  tag: '$(Build.BuildId)'
   imagePullSecret: 'aksdemosaas1933597e-auth'
 
   # Agent VM image name
