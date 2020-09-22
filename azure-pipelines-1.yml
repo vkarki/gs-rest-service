@@ -39,10 +39,12 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
-          
-    - upload: manifests
-      artifact: manifests
+          $(tag)         
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'manifests'
+        publishLocation: 'Container'
 
 # - stage: Deploy
 #   displayName: Deploy stage
