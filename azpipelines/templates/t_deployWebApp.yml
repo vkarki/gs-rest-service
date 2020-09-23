@@ -1,0 +1,21 @@
+parameters:
+  - name: environmentName
+  - name: webAppName
+
+jobs:
+- deployment: DeployLinuxWebApp
+  displayName: Deploy Linux Web App
+  environment: '${{parameters.environmentName}}'
+  pool: 
+    vmImage: 'ubuntu-latest'
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - task: AzureWebApp@1
+          displayName: 'Azure Web App Deploy: ${{parameters.webAppName}}'
+          inputs:
+            azureSubscription: 'serviceconnection'
+            appType: 'webAppLinux'
+            appName: '${{parameters.webAppName}}'
+            package: '$(Pipeline.Workspace)/drop/**/target/*.jar'
