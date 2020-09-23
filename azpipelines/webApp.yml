@@ -37,7 +37,7 @@ stages:
   jobs:
   - template: templates/t_deployWebApp.yml # template to deploy env
     parameters:  
-      environment: "Dev"  
+      environmentName: "Dev"  
       webAppName: 'saasdev'
 
 - stage:
@@ -47,7 +47,7 @@ stages:
   jobs:
   - template: templates/t_deployWebApp.yml # template to deploy env
     parameters:  
-      environment: "Dev"  
+      environmentName: "UAT"  
       webAppName: 'saasuat'
 
 - stage:
@@ -57,5 +57,5 @@ stages:
   jobs:
   - template: templates/t_deployWebApp.yml # template to deploy env
     parameters:  
-      environment: "Dev"  
+      environmentName: "Prod"  
       webAppName: 'saasprod'
