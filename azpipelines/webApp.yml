@@ -30,7 +30,7 @@ stages:
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
 
-- stage:
+- stage: Dev
   displayName: 'Dev'
   dependsOn: Build
   condition: succeeded()
@@ -40,7 +40,7 @@ stages:
       environmentName: "Dev"  
       webAppName: 'saasdev'
 
-- stage:
+- stage: UAT
   displayName: 'UAT'
   dependsOn: Dev
   condition: succeeded()  
@@ -50,7 +50,7 @@ stages:
       environmentName: "UAT"  
       webAppName: 'saasuat'
 
-- stage:
+- stage: Prod
   displayName: 'Prod'
   dependsOn: UAT
   condition: succeeded()
